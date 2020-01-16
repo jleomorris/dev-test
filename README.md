@@ -8,7 +8,7 @@ Read the full specification [here](https://bit.ly/fv-dev-test).
 
 ### Quick Start
 
-```shell
+```bash
 # Setup ENV (update DB_* to match your local DB environment)
 cp .env.example .env
 
@@ -34,14 +34,14 @@ Start editing the frontend files located inside the `src` directory. Changes wil
 
 Install the [docker client](https://docs.docker.com/#run-docker-anywhere) if you machine doesn't already have it installed.
 
-```shell
+```bash
 cp .env.example .env
 docker-compose up --build # On first run will take ~5 mins, depending on your machine's hardware
 ```
 
 After all containers are running, run:
 
-```shell
+```bash
 docker-compose exec app php artisan key:generate
 docker-compose exec app php artisan migrate:refresh --seed
 ```
@@ -50,12 +50,12 @@ Start editing the frontend files located inside the `src` directory. Changes wil
 
 Add a new composer package:
 
-```shell
+```bash
 docker-compose exec app composer require package
 ```
 
 Add a new npm package:
 
-```shell
+```bash
 docker-compose exec client npm add package
 ```
