@@ -1,1 +1,23 @@
 @import "style/vars";
+// @import "Accordion";
+
+body {
+  background: #d2e1ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.accordion__container {
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  // position: absolute;
+  // left: 82px;
+  // top: 251px;
+  // width: 753px;
+  // height: 444px;
+  z-index: 54;
+  // margin-bottom: 100px;
+  padding: 5px;
+}
