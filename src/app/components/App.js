@@ -11,43 +11,57 @@ export default class App extends Component {
           <Accordion
             title="Step 1: Your details"
             content="
-            <div className='form-container'>
-              <p>First Name</p>
-              <input></input>
-              <p>Surname</p>
-              <input></input>
-              <p>Email address</p>
-              <input></input>
+            <div class='form-container'>
+              <div class='detail'>
+                <p>First Name</p>
+                <input></input>
+              </div>
+              <div class='detail'>
+                <p>Surname</p>
+                <input></input>
+              </div>
+              <div class='detail'>
+                <p>Email address</p>
+                <input></input>
+              </div>
             </div>
-            <button>Next ></button>"
+            <button class='next__button'>Next ></button>"
           />
           <Accordion
             title="Step 2: More comments"
             content=" 
-            <div className='form-container'>
-              <p>Telephone number</p>
-              <input></input>
-              <p>Gender</p>
-              <select>
-                <option>Select Gender</option>
-                <option>Male</option>
-                <option>Female</option>
-              </select>
-              <p>Date of birth</p>
-              <input></input>
-              <input></input>
-              <input></input>
+            <div class='form-container'>
+              <div class='detail'>
+                <p>Telephone number</p>
+                <input></input>
+              </div>  
+              <div class='detail'>
+                <p>Gender</p>
+                <select>
+                  <option>Select Gender</option>
+                  <option>Male</option>
+                  <option>Female</option>
+                </select>
+              </div>  
+              <div class='detail'>
+                <p>Date of birth</p>
+                <input class='date__of__birth__input'></input>
+                <input class='date__of__birth__input'></input>
+                <input class='date__of__birth__input'></input>
+              </div>  
             </div>
-            <button>Next ></button>"
+            <button class='next__button'>Next ></button>"
           />
           <Accordion
             title="Step 3: Final comments"
             content=" 
-            <div className='form-container'>
-              <p>Comments</p>
-              <input></input>
+            <div class='form-container'>
+              <div class='detail'>
+                <p>Comments</p>
+                <input class='comments__input'></input>
+              </div>
             </div>
-            <button>Next ></button>"
+            <button class='next__button'>Next ></button>"
           />
         </div>
       </>
