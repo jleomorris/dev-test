@@ -1,0 +1,107 @@
+.accordion__section {
+  display: flex;
+  flex-direction: column;
+}
+
+.accordion {
+  border-radius: 10px;
+  padding: 5px 20px;
+  border: none;
+  box-shadow: inset 0px 2px 0px 0px rgba(255, 255, 255, 0.48);
+  background-image: -moz-linear-gradient(90deg, #db8e1e 0%, rgba(245, 191, 2, 1) 100%);
+  background-image: -webkit-linear-gradient(90deg, #db8e1e 0%, rgba(245, 191, 2, 1) 100%);
+  background-image: -ms-linear-gradient(90deg, #db8e1e 0%, rgba(245, 191, 2, 1) 100%);
+  z-index: 58;
+  font-size: 16px;
+  font-family: "Arial";
+  color: rgb(255, 255, 255);
+  line-height: 1.125;
+  text-align: left;
+  text-shadow: 0px 1px 0px rgba(104, 104, 104, 0.004);
+
+}
+
+.accordion:hover,
+.active {
+  background-color: #ccc;
+}
+
+.accordion__title {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+}
+
+.accordion__icon {
+  margin-left: auto;
+  transition: transform 0.6s ease;
+}
+
+.rotate {
+  transform: rotate(90deg);
+}
+
+.accordion__content {
+  overflow: hidden;
+  transition: max-height 0.6s ease;
+  border-radius: 10px;
+  background: #dedede;
+  border-radius: 0px 0px 10px 10px;
+  position: relative;
+  top: -10px;
+}
+
+.accordion__text {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 18px;
+  position: relative;
+
+  .next__button {
+    border-radius: 10px;
+    border: none;
+    background-image: -webkit-linear-gradient(90deg, #675bb1 0%, rgba(15, 23, 109, 0.96) 100%);
+    background-image: -moz-linear-gradient(90deg, #675bb1 0%, rgba(15, 23, 109, 0.96) 100%);
+    background-image: -ms-linear-gradient(90deg, #675bb1 0%, rgba(15, 23, 109, 0.96) 100%);
+    box-shadow: inset 0px 2px 0px 0px rgba(255, 255, 255, 0.48);
+    z-index: 72;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 10px 15px;
+    padding: 7px 35px;
+    color: white;
+  }
+
+  .form-container {
+    display: flex;
+    width: 70%;
+    flex-wrap: wrap;
+
+    .detail {
+
+      p {
+        font-weight: bold;
+      }
+
+      input, select {
+        border-radius: 5px;
+        padding: 8px;
+        margin: 0px 12px 0 0;
+        border: none;
+        box-shadow: inset 0px 2px 9px 0px rgba(0, 0, 0, 0.48);
+        outline: none;
+      }
+
+      .date__of__birth__input {
+        width: 30px;
+        margin: 0px 3px;
+      }
+
+      .comments__input {
+        height: 100px;
+        width: 150%;
+      }
+    }
+  }
+}
