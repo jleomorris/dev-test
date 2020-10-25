@@ -1,16 +1,61 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
+import "./Accordion.scss";
+import AccordionSectionOne from "./AccordionSectionOne";
+import AccordionSectionTwo from "./AccordionSectionTwo";
+import AccordionSectionThree from "./AccordionSectionThree";
 
 function Accordion(props) {
+  const [sectionOneactive, setSectionOne] = useState("");
+  const [sectionOneHeight, setSectionOneHeight] = useState("0px");
+  const [sectionTwoactive, setSectionTwo] = useState("");
+  const [sectionTwoHeight, setSectionTwoHeight] = useState("0px");
+  const [sectionThreeactive, setSectionThree] = useState("");
+  const [sectionThreeHeight, setSectionThreeHeight] = useState("0px");
+  // const [active, setActive] = useState("");
+  // const [setHeight, setHeightState] = useState("0px");
+  const content = useRef(null);
+
+  // Force section one open on initial render
+  useEffect(() => {
+    setSectionOne("active");
+    setSectionOneHeight(`${content.current.scrollHeight}px`);
+  }, [])
+
+  function toggleAccordion(i) {
+    if(i==0) {
+      setSectionOne(sectionOneactive === "" ? "active" : "");
+      setSectionTwo(sectionOneactive === "" ? "active" : "");
+      
+      console.log(content.current.scrollHeight);
+      
+      setSectionOneHeight(sectionOneactive === "active" ? "0px" : `${content.current.scrollHeight}px`);
+      setSectionTwoHeight(sectionOneactive === "" ? "0px" : `${content.current.scrollHeight}px`);
+    }else if(i==1) {
+      setSectionTwo(sectionTwoactive === "" ? "active" : "");
+      setSectionThree(sectionTwoactive === "" ? "active" : "");
+      
+      console.log(content.current.scrollHeight);
+  
+      setSectionTwoHeight(sectionTwoactive === "active" ? "0px" : `${content.current.scrollHeight}px`);
+      setSectionThreeHeight(sectionTwoactive === "" ? "0px" : `${content.current.scrollHeight}px`);
+    } else if(i==2) {
+      setSectionThree(sectionThreeactive === "" ? "active" : "");
+      
+      console.log(content.current.scrollHeight);
+  
+      setSectionThreeHeight(sectionThreeactive === "active" ? "0px" : `${content.current.scrollHeight}px`);
+
+    }
+
+
+  }
+  
   return (
-    <div className="accordion__section">
-      <button className="accordion">
-        <p className="accordion__title">{props.title}</p>
-      </button>
-      <div className="accordion__content">
-        <div className="accordion__text" dangerouslySetInnerHTML={{ __html: props.content }}> 
-        </div>
-      </div>
-    </div>
+    <>
+      <AccordionSectionOne active={sectionOneactive} setActive={setSectionOne} setHeight={sectionOneHeight} setHeightState={setSectionOneHeight} content={content} toggleAccordion={toggleAccordion} title="Step 1: Your details" id="0" />
+      <AccordionSectionTwo active={sectionTwoactive} setActive={setSectionTwo} setHeight={sectionTwoHeight} setHeightState={setSectionTwoHeight} content={content} toggleAccordion={toggleAccordion} title="Step 2: More comments" id="1" />
+      <AccordionSectionThree active={sectionThreeactive} setActive={setSectionThree} setHeight={sectionThreeHeight} setHeightState={setSectionThreeHeight} content={content} toggleAccordion={toggleAccordion} title="Step 3: Final comments" id="2"/>
+    </>
   )
 }
 
