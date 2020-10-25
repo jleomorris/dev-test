@@ -25,29 +25,51 @@ function Accordion(props) {
     if(i==0) {
       setSectionOne(sectionOneactive === "" ? "active" : "");
       setSectionTwo(sectionOneactive === "" ? "active" : "");
-      
-      console.log(content.current.scrollHeight);
-      
       setSectionOneHeight(sectionOneactive === "active" ? "0px" : `${content.current.scrollHeight}px`);
       setSectionTwoHeight(sectionOneactive === "" ? "0px" : `${content.current.scrollHeight}px`);
-    }else if(i==1) {
-      setSectionTwo(sectionTwoactive === "" ? "active" : "");
-      setSectionThree(sectionTwoactive === "" ? "active" : "");
+
+      console.table({
+        sectionOneactive,
+        sectionTwoactive,
+        sectionThreeactive,
+        sectionOneHeight,
+        sectionTwoHeight,
+        sectionThreeHeight
+      })
       
-      console.log(content.current.scrollHeight);
-  
+      // console.log(content.current.scrollHeight);
+      setSectionTwo(sectionTwoactive === "" ? "active" : "");
+    }else if(i==1) {
+      setSectionThree(sectionTwoactive === "" ? "active" : "");
       setSectionTwoHeight(sectionTwoactive === "active" ? "0px" : `${content.current.scrollHeight}px`);
       setSectionThreeHeight(sectionTwoactive === "" ? "0px" : `${content.current.scrollHeight}px`);
+      
+      console.table({
+        sectionOneactive,
+        sectionTwoactive,
+        sectionThreeactive,
+        sectionOneHeight,
+        sectionTwoHeight,
+        sectionThreeHeight
+      })
+      // console.log(content.current.scrollHeight);
+      setSectionThree(sectionThreeactive === "" ? "active" : "");
     } else if(i==2) {
       setSectionThree(sectionThreeactive === "" ? "active" : "");
-      
-      console.log(content.current.scrollHeight);
-  
       setSectionThreeHeight(sectionThreeactive === "active" ? "0px" : `${content.current.scrollHeight}px`);
-
+      
+      console.table({
+        sectionOneactive,
+        sectionTwoactive,
+        sectionThreeactive,
+        sectionOneHeight,
+        sectionTwoHeight,
+        sectionThreeHeight
+      })
+      // console.log(content.current.scrollHeight);
     }
-
-
+    
+    
   }
   
   return (
