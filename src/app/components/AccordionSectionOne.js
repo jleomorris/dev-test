@@ -2,6 +2,11 @@ import React, { useState, useRef } from "react";
 // import "./Accordion.scss";
 
 function AccordionSectionOne(props) {
+  const [firstName, setFirstName] = useState("");
+  const [surname, setSurname] = useState("");
+  const [email, setEmail] = useState("");
+  const [errors, setErrors] = useState([]);
+
   // const [active, setActive] = useState("");
   // const [setHeight, setHeightState] = useState("0px");
   // const content = useRef(null);
@@ -13,6 +18,41 @@ function AccordionSectionOne(props) {
 
   //   setHeightState(active === "active" ? "0px" : `${content.current.scrollHeight}px`);
   // }
+
+  function handleFirstNameChange(e) {
+    // console.log(e.target.value);
+    setFirstName(e.target.value);
+    // debugger;
+  }
+  
+  function handleSurnameChange(e) {
+    // console.log(e.target.value);
+    setSurname(e.target.value);
+  }
+  
+  function handlEmailChange(e) {
+    // console.log(e.target.value);
+    setEmail(e.target.value);  
+  }
+  
+  function handleNextClick() {
+    props.toggleAccordion(props.id)
+
+    validateData();
+  }
+
+  function validateData() {
+    firstName.length > 0 ? console.info(`First name accepted (${firstName})`) : (alert("Please enter a first name"), console.info(`First name not accepted (${firstName}) `));
+    surname.length > 0 ? console.info(`Surname accepted (${surname})`) : (alert("Please enter a surname"), console.info(`Surname not accepted (${surname})`));
+    email.length > 0 && validateEmail(email) ? console.info(`Email accepted (${email})`) : (alert("Please enter a valid email address"), console.info(`Email not accepted (${email})`));
+  }
+
+  function validateEmail(email) {
+    const validEmailRegex = RegExp(/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i);
+    const passedValidation = validEmailRegex.test(email) ? true : false;
+
+    return passedValidation;
+  }
   
   return (
     <div className="accordion__section">
@@ -24,19 +64,19 @@ function AccordionSectionOne(props) {
           <div className='form-container'>
                 <div className='detail'>
                   <p>First Name</p>
-                  <input></input>
+                  <input onChange={handleFirstNameChange}></input>
                 </div>
                 <div className='detail'>
                   <p>Surname</p>
-                  <input></input>
+                  <input onChange={handleSurnameChange}></input>
                 </div>
                 <div className='detail'>
                   <p>Email address</p>
-                  <input></input>
+                  <input onChange={handlEmailChange}></input>
                 </div>
             </div>
         </div>
-        <button ref={props.content} className='next__button' onClick={() => { props.toggleAccordion(props.id) }}>Next ></button>
+        <button ref={props.content} className='next__button' onClick={handleNextClick}>Next ></button>
       </div>
     </div>
   )
