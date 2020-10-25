@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 // import "./Accordion.scss";
 
 function AccordionSectionThree(props) {
+  const [comments, setComments] = useState("");
   // const [active, setActive] = useState("");
   // const [setHeight, setHeightState] = useState("0px");
   // const content = useRef(null);
@@ -13,6 +14,15 @@ function AccordionSectionThree(props) {
 
   //   setHeightState(active === "active" ? "0px" : `${content.current.scrollHeight}px`);
   // }
+
+  function handleCommentsChange(e) {
+    setComments(e.target.value);
+  }
+
+  function handleNextClick(e) {
+    props.toggleAccordion(props.id)
+    console.log(`Comments accepted (${comments})`)
+  }
   
   return (
     <div className="accordion__section">
@@ -24,11 +34,11 @@ function AccordionSectionThree(props) {
           <div className='form-container'>
               <div className='detail'>
                 <p>Comments</p>
-                <input className='comments__input'></input>
+                <input className='comments__input' onChange={handleCommentsChange}></input>
               </div>
           </div>
         </div>
-        <button ref={props.content} className='next__button' onClick={() => { props.toggleAccordion(props.id) }}>Next ></button>
+        <button ref={props.content} className='next__button' onClick={handleNextClick}>Next ></button>
       </div>
     </div>
   )

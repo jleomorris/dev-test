@@ -6,6 +6,7 @@ function AccordionSectionOne(props) {
   const [surname, setSurname] = useState("");
   const [email, setEmail] = useState("");
   const [errors, setErrors] = useState([]);
+  let areAllChecksPassed = false;
 
   // const [active, setActive] = useState("");
   // const [setHeight, setHeightState] = useState("0px");
@@ -36,15 +37,19 @@ function AccordionSectionOne(props) {
   }
   
   function handleNextClick() {
+    if(validateData() === false) return;
+    
     props.toggleAccordion(props.id)
-
-    validateData();
   }
 
   function validateData() {
-    firstName.length > 0 ? console.info(`First name accepted (${firstName})`) : (alert("Please enter a first name"), console.info(`First name not accepted (${firstName}) `));
+    firstName.length > 0 ? console.info(`First name accepted (${firstName})`) : (alert("Please enter a first name"), console.info(`First name not accepted (${firstName})`));
     surname.length > 0 ? console.info(`Surname accepted (${surname})`) : (alert("Please enter a surname"), console.info(`Surname not accepted (${surname})`));
     email.length > 0 && validateEmail(email) ? console.info(`Email accepted (${email})`) : (alert("Please enter a valid email address"), console.info(`Email not accepted (${email})`));
+
+    if(!(firstName.length > 0 && surname.length > 0 && email.length > 0 && validateEmail(email))) {
+      return false;
+    }
   }
 
   function validateEmail(email) {

@@ -47,7 +47,7 @@ function AccordionSectionTwo(props) {
   }
   
   function handleNextClick() {
-    validateData();
+    if(validateData() === false) return;
     
     props.toggleAccordion(props.id)
   }
@@ -59,6 +59,10 @@ function AccordionSectionTwo(props) {
     telephoneNumber.length > 0 && validateTelephoneNumber(telephoneNumber) ? console.info(`Telephone number accepted  (${telephoneNumber})`) : (alert("Please enter a valid UK telephone number (11 digits, beginning with 07)", console.info(`Telephone number not accepted (${telephoneNumber})`)));
     gender.length > 0 ? console.info(`Gender accepted (${gender})`) : (alert("Please select a gender"), console.info(`Gender not accepted (${gender})`));
     day.length > 0 && validateDay(day) && month.length > 0 && validateMonth(month) && year.length > 0 && validateYear(year) ? console.info(`Date of birth accepted (${concatDateofBirth})`) : (alert("Please enter a date of birth in the format dd/mm/yyy"), console.info(`Date of birth not accepted (${concatDateofBirth})`));
+  
+    if(!(telephoneNumber.length > 0 && validateTelephoneNumber(telephoneNumber) && gender.length > 0 && day.length > 0 && validateDay(day))) {
+      return false;
+    }
   }
 
   function validateTelephoneNumber(telephoneNumber) {
