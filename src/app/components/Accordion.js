@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./Accordion.scss";
+// import "./Accordion.sass";
 import AccordionSectionOne from "./AccordionSectionOne";
 import AccordionSectionTwo from "./AccordionSectionTwo";
 import AccordionSectionThree from "./AccordionSectionThree";
