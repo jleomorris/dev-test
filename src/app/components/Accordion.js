@@ -12,11 +12,8 @@ function Accordion(props) {
   const [sectionTwoHeight, setSectionTwoHeight] = useState("0px");
   const [sectionThreeactive, setSectionThree] = useState("");
   const [sectionThreeHeight, setSectionThreeHeight] = useState("0px");
-  // const [active, setActive] = useState("");
-  // const [setHeight, setHeightState] = useState("0px");
   const content = useRef(null);
 
-  // Force section one open on initial render
   useEffect(() => {
     setSectionOne("active");
     setSectionOneHeight(`${content.current.scrollHeight}px`);
@@ -28,49 +25,16 @@ function Accordion(props) {
       setSectionTwo(sectionOneactive === "" ? "active" : "");
       setSectionOneHeight(sectionOneactive === "active" ? "0px" : `${content.current.scrollHeight}px`);
       setSectionTwoHeight(sectionOneactive === "" ? "0px" : `${content.current.scrollHeight}px`);
-
-      console.table({
-        sectionOneactive,
-        sectionTwoactive,
-        sectionThreeactive,
-        sectionOneHeight,
-        sectionTwoHeight,
-        sectionThreeHeight
-      })
-      
-      // console.log(content.current.scrollHeight);
       setSectionTwo(sectionTwoactive === "" ? "active" : "");
     }else if(i==1) {
       setSectionThree(sectionTwoactive === "" ? "active" : "");
       setSectionTwoHeight(sectionTwoactive === "active" ? "0px" : `${content.current.scrollHeight}px`);
       setSectionThreeHeight(sectionTwoactive === "" ? "0px" : `${content.current.scrollHeight}px`);
-      
-      console.table({
-        sectionOneactive,
-        sectionTwoactive,
-        sectionThreeactive,
-        sectionOneHeight,
-        sectionTwoHeight,
-        sectionThreeHeight
-      })
-      // console.log(content.current.scrollHeight);
       setSectionThree(sectionThreeactive === "" ? "active" : "");
     } else if(i==2) {
       setSectionThree(sectionThreeactive === "" ? "active" : "");
       setSectionThreeHeight(sectionThreeactive === "active" ? "0px" : `${content.current.scrollHeight}px`);
-      
-      console.table({
-        sectionOneactive,
-        sectionTwoactive,
-        sectionThreeactive,
-        sectionOneHeight,
-        sectionTwoHeight,
-        sectionThreeHeight
-      })
-      // console.log(content.current.scrollHeight);
-    }
-    
-    
+    }  
   }
   
   return (

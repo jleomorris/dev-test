@@ -1,19 +1,7 @@
 import React, { useState, useRef } from "react";
-// import "./Accordion.scss";
 
 function AccordionSectionThree(props) {
   const [comments, setComments] = useState("");
-  // const [active, setActive] = useState("");
-  // const [setHeight, setHeightState] = useState("0px");
-  // const content = useRef(null);
-
-  // function toggleAccordion() {
-  //   setActive(active === "" ? "active" : "");
-    
-  //   console.log(content.current.scrollHeight);
-
-  //   setHeightState(active === "active" ? "0px" : `${content.current.scrollHeight}px`);
-  // }
 
   function handleCommentsChange(e) {
     setComments(e.target.value);

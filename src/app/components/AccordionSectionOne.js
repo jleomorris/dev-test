@@ -1,44 +1,25 @@
 import React, { useState, useRef } from "react";
-// import "./Accordion.scss";
 
 function AccordionSectionOne(props) {
   const [firstName, setFirstName] = useState("");
   const [surname, setSurname] = useState("");
   const [email, setEmail] = useState("");
   const [errors, setErrors] = useState([]);
-  // let areAllChecksPassed = false;
-
-  // const [active, setActive] = useState("");
-  // const [setHeight, setHeightState] = useState("0px");
-  // const content = useRef(null);
-
-  // function toggleAccordion() {
-  //   setActive(active === "" ? "active" : "");
-    
-  //   console.log(content.current.scrollHeight);
-
-  //   setHeightState(active === "active" ? "0px" : `${content.current.scrollHeight}px`);
-  // }
 
   function handleFirstNameChange(e) {
-    // console.log(e.target.value);
     setFirstName(e.target.value);
-    // debugger;
   }
   
   function handleSurnameChange(e) {
-    // console.log(e.target.value);
     setSurname(e.target.value);
   }
   
   function handlEmailChange(e) {
-    // console.log(e.target.value);
     setEmail(e.target.value);  
   }
   
   function handleNextClick() {
     if(validateData() === false) return;
-    
     props.toggleAccordion(props.id)
   }
 

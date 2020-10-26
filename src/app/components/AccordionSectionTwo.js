@@ -9,40 +9,23 @@ function AccordionSectionTwo(props) {
   const [year, setYear] = useState("");
   const [dateOfBirth, setDateofBirth]  = useState("");
 
-  // const [active, setActive] = useState("");
-  // const [setHeight, setHeightState] = useState("0px");
-  // const content = useRef(null);
-
-  // function toggleAccordion() {
-  //   setActive(active === "" ? "active" : "");
-    
-  //   console.log(content.current.scrollHeight);
-
-  //   setHeightState(active === "active" ? "0px" : `${content.current.scrollHeight}px`);
-  // }
-
   function handleTelephoneChange(e) {
-    // console.log(e.target.value);
     setTelephoneNumber(e.target.value);
   }
   
   function handleGenderChange(e) {
-    // console.log(e.target.value);
     setGender(e.target.value);
   }
 
   function handleDateDayChange(e) {
-    // console.log(e.target.value);
     setDay(e.target.value);
   }
 
   function handleDateMonthChange(e) {
-    // console.log(e.target.value);
     setMonth(e.target.value);
   }
 
   function handleDateYearChange(e) {
-    // console.log(e.target.value);
     setYear(e.target.value);
   }
   
@@ -69,7 +52,7 @@ function AccordionSectionTwo(props) {
     const passedPrefixCheck = telephonePrefix === "07";
     const passedLengthCheck = telephoneNumber.length === 11;
     const passedValidation = passedPrefixCheck && passedLengthCheck;
-    // debugger;
+
     return passedValidation;
   }
 
