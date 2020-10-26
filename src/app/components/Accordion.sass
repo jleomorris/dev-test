@@ -1,0 +1,107 @@
+@import "src/style/vars"
+
+.accordion__section 
+  display: flex
+  flex-direction: column
+
+
+.accordion 
+  border-radius: 10px
+  padding: 5px 20px
+  margin-bottom: 5px
+  border: none
+  outline: none
+  cursor: pointer
+  box-shadow: inset 0px 2px 0px 0px rgba(255, 255, 255, 0.48)
+  background-image: -moz-linear-gradient(90deg, $accordionBackground1, $accordionBackground2)
+  background-image: -webkit-linear-gradient(90deg, $accordionBackground1, $accordionBackground2)
+  background-image: -ms-linear-gradient(90deg, $accordionBackground1, $accordionBackground2)
+  z-index: 58
+  font-size: 16px
+  font-family: "Arial"
+  color: rgb(255, 255, 255)
+  line-height: 1.125
+  text-align: left
+  text-shadow: 0px 1px 0px rgba(104, 104, 104, 0.004)
+
+
+
+.accordion__title 
+  font-family: "Open Sans", sans-serif
+  font-size: 14px
+
+
+.accordion__content 
+  overflow: hidden
+  transition: max-height 0.6s ease
+  border-radius: 10px
+  background: #dedede
+  border-radius: 0px 0px 10px 10px
+  position: relative
+  top: -10px
+  
+  .next__button 
+    cursor: pointer
+    border-radius: 10px
+    border: none
+    background-image: -webkit-linear-gradient(90deg, $nextButton1, $nextButton2)
+    background-image: -moz-linear-gradient(90deg, $nextButton1, $nextButton2)
+    background-image: -ms-linear-gradient(90deg, $nextButton1, $nextButton2)
+    position: absolute
+    bottom: 0
+    right: 0
+    margin: 10px 15px
+    padding: 7px 35px
+    color: white
+    outline: none
+  
+
+
+#comments__accordion__text 
+    padding-bottom: 10px
+
+
+.accordion__text 
+  font-family: "Open Sans", sans-serif
+  font-weight: 400
+  font-size: 14px
+  padding: 10px 10px 45px 10px
+  position: relative
+
+  .form-container 
+
+    form 
+      display: flex
+      width: 70%
+      flex-wrap: wrap
+    
+
+    .detail 
+
+      p 
+        font-weight: bold
+        margin: 5px
+      
+
+      input, select 
+        border-radius: 5px
+        padding: 8px
+        margin: 0px 12px 0 0
+        border: none
+        box-shadow: inset 0px 2px 9px 0px rgba(0, 0, 0, 0.48)
+        outline: none
+      
+
+      .date__of__birth__input 
+        width: 25px
+        margin: 0px 3px
+      
+
+      .comments__input 
+        padding: 0 8px
+        padding-bottom: 132px
+        width: 170%
+      
+    
+  
+
