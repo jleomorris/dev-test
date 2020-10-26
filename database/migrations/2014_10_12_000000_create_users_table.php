@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->bigIncrements('telephone');
             $table->string('gender');
-            $table->string('date-of-birth');
+            $table->string('date_of_birth');
             $table->string('comments');
         });
     }
