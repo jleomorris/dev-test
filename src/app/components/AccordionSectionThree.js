@@ -18,7 +18,7 @@ function AccordionSectionThree(props) {
         <p className="accordion__title">{props.title}</p>
       </button>
       <div ref={props.content} style={{ maxHeight: `${props.setHeight}` }} className="accordion__content">
-        <div className="accordion__text"> 
+        <div className="accordion__text" id="comments__accordion__text"> 
           <div className='form-container'>
             <form method="post" action="{{url('user')}}">
               <div className='detail'>
