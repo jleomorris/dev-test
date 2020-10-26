@@ -6,7 +6,7 @@ function AccordionSectionOne(props) {
   const [surname, setSurname] = useState("");
   const [email, setEmail] = useState("");
   const [errors, setErrors] = useState([]);
-  let areAllChecksPassed = false;
+  // let areAllChecksPassed = false;
 
   // const [active, setActive] = useState("");
   // const [setHeight, setHeightState] = useState("0px");
@@ -67,19 +67,21 @@ function AccordionSectionOne(props) {
       <div ref={props.content} style={{ maxHeight: `${props.setHeight}` }} className="accordion__content">
         <div className="accordion__text"> 
           <div className='form-container'>
-                <div className='detail'>
-                  <p>First Name</p>
-                  <input onChange={handleFirstNameChange}></input>
-                </div>
-                <div className='detail'>
-                  <p>Surname</p>
-                  <input onChange={handleSurnameChange}></input>
-                </div>
-                <div className='detail'>
-                  <p>Email address</p>
-                  <input onChange={handlEmailChange}></input>
-                </div>
-            </div>
+            <form method="post" action="{{url('user')}}">
+              <div className='detail'>
+                <p>First Name</p>
+                <input type="text" name="first_name" onChange={handleFirstNameChange}></input>
+              </div>
+              <div className='detail'>
+                <p>Surname</p>
+                <input type="text" name="surname" onChange={handleSurnameChange}></input>
+              </div>
+              <div className='detail'>
+                <p>Email address</p>
+                <input type="text" name="email" onChange={handlEmailChange}></input>
+              </div>
+            </form> 
+          </div>
         </div>
         <button ref={props.content} className='next__button' onClick={handleNextClick}>Next ></button>
       </div>

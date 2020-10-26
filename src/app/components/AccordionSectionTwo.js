@@ -97,26 +97,28 @@ function AccordionSectionTwo(props) {
       <div ref={props.content} style={{ maxHeight: `${props.setHeight}` }} className="accordion__content">
         <div className="accordion__text"> 
         <div className='form-container'>
-              <div className='detail'>
-                <p>Telephone number</p>
-                <input onChange={handleTelephoneChange}></input>
-              </div>  
-              <div className='detail'>
-                <p>Gender</p>
-                <select onChange={handleGenderChange}>
-                <option value="" disabled selected hidden>Select Gender</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
-                </select>
-              </div>  
-              <div className='detail'>
-                <p>Date of birth</p>
-                <input className='date__of__birth__input' onChange={handleDateDayChange}></input>
-                <input className='date__of__birth__input' onChange={handleDateMonthChange}></input>
-                <input className='date__of__birth__input' onChange={handleDateYearChange}></input>
-              </div>  
-            </div>
+          <form method="post" action="{{url('user')}}">
+            <div className='detail'>
+              <p>Telephone number</p>
+              <input type="number" name="telephone" onChange={handleTelephoneChange}></input>
+            </div>  
+            <div className='detail'>
+              <p>Gender</p>
+              <select onChange={handleGenderChange}>
+                <option disabled selected hidden>Select Gender</option>
+                <option type="text" value="male">Male</option>
+                <option type="text" value="female">Female</option>
+                <option type="text" value="other">Other</option>
+              </select>
+            </div>  
+            <div className='detail'>
+              <p>Date of birth</p>
+              <input type="text" name="date_of_birth_day" className='date__of__birth__input' onChange={handleDateDayChange}></input>
+              <input type="text" name="date_of_birth_month" className='date__of__birth__input' onChange={handleDateMonthChange}></input>
+              <input type="text" name="date_of_birth_year" className='date__of__birth__input' onChange={handleDateYearChange}></input>
+            </div>  
+          </form>   
+        </div>
         </div>
         <button ref={props.content} className='next__button' onClick={handleNextClick}>Next ></button>
       </div>

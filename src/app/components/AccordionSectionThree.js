@@ -32,10 +32,12 @@ function AccordionSectionThree(props) {
       <div ref={props.content} style={{ maxHeight: `${props.setHeight}` }} className="accordion__content">
         <div className="accordion__text"> 
           <div className='form-container'>
+            <form method="post" action="{{url('user')}}">
               <div className='detail'>
                 <p>Comments</p>
-                <input className='comments__input' onChange={handleCommentsChange}></input>
+                <input type="text" name="comments" className='comments__input' onChange={handleCommentsChange}></input>
               </div>
+            </form>
           </div>
         </div>
         <button ref={props.content} className='next__button' onClick={handleNextClick}>Next ></button>
