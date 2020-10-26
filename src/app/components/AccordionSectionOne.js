@@ -83,7 +83,7 @@ function AccordionSectionOne(props) {
             </form> 
           </div>
         </div>
-        <button ref={props.content} className='next__button' onClick={handleNextClick}>Next ></button>
+        <button type="submit" ref={props.content} className='next__button' onClick={handleNextClick}>Next ></button>
       </div>
     </div>
   )
