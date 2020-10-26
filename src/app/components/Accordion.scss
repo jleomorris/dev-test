@@ -1,3 +1,5 @@
+@import "src/style/vars";
+
 .accordion__section {
   display: flex;
   flex-direction: column;
@@ -11,9 +13,9 @@
   outline: none;
   cursor: pointer;
   box-shadow: inset 0px 2px 0px 0px rgba(255, 255, 255, 0.48);
-  background-image: -moz-linear-gradient(90deg, #db8e1e 0%, rgba(245, 191, 2, 1) 100%);
-  background-image: -webkit-linear-gradient(90deg, #db8e1e 0%, rgba(245, 191, 2, 1) 100%);
-  background-image: -ms-linear-gradient(90deg, #db8e1e 0%, rgba(245, 191, 2, 1) 100%);
+  background-image: -moz-linear-gradient(90deg, $accordionBackground1, $accordionBackground2);
+  background-image: -webkit-linear-gradient(90deg, $accordionBackground1, $accordionBackground2);
+  background-image: -ms-linear-gradient(90deg, $accordionBackground1, $accordionBackground2);
   z-index: 58;
   font-size: 16px;
   font-family: "Arial";
@@ -23,24 +25,11 @@
   text-shadow: 0px 1px 0px rgba(104, 104, 104, 0.004);
 }
 
-.active {
-  // background-color: #ccc;
-  // border: 4px solid red;
-}
 
 .accordion__title {
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
 }
-
-// .accordion__icon {
-//   margin-left: auto;
-//   transition: transform 0.6s ease;
-// }
-
-// .rotate {
-//   transform: rotate(90deg);
-// }
 
 .accordion__content {
   overflow: hidden;
@@ -55,11 +44,9 @@
     cursor: pointer;
     border-radius: 10px;
     border: none;
-    background-image: -webkit-linear-gradient(90deg, #675bb1 0%, rgba(15, 23, 109, 0.96) 100%);
-    background-image: -moz-linear-gradient(90deg, #675bb1 0%, rgba(15, 23, 109, 0.96) 100%);
-    background-image: -ms-linear-gradient(90deg, #675bb1 0%, rgba(15, 23, 109, 0.96) 100%);
-    box-shadow: inset 0px 2px 0px 0px rgba(255, 255, 255, 0.48);
-    // z-index: 72;
+    background-image: -webkit-linear-gradient(90deg, $nextButton1, $nextButton2);
+    background-image: -moz-linear-gradient(90deg, $nextButton1, $nextButton2);
+    background-image: -ms-linear-gradient(90deg, $nextButton1, $nextButton2);
     position: absolute;
     bottom: 0;
     right: 0;
@@ -70,23 +57,30 @@
   }
 }
 
+#comments__accordion__text {
+    padding-bottom: 10px;
+}
+
 .accordion__text {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   font-size: 14px;
-  padding: 18px;
+  padding: 10px 10px 45px 10px;
   position: relative;
 
-
   .form-container {
-    display: flex;
-    width: 70%;
-    flex-wrap: wrap;
+
+    form {
+      display: flex;
+      width: 70%;
+      flex-wrap: wrap;
+    }
 
     .detail {
 
       p {
         font-weight: bold;
+        margin: 5px;
       }
 
       input, select {
@@ -99,14 +93,14 @@
       }
 
       .date__of__birth__input {
-        width: 30px;
+        width: 25px;
         margin: 0px 3px;
       }
 
       .comments__input {
         padding: 0 8px;
-        padding-bottom: 100px;
-        width: 150%;
+        padding-bottom: 132px;
+        width: 170%;
       }
     }
   }
